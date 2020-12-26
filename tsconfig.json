@@ -18,7 +18,8 @@
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "noEmit": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "noImplicitAny": false
     },
     "include": [
         "src"
