@@ -5,6 +5,7 @@ import { mockAuthentication } from "@/domain/test/mock-authentication";
 import { RemoteAuthentication } from "./remote-authentication";
 import { InvalidCredentialsError } from "@/domain/errors/invalid-credentials-error";
 import { HttpStatusCode } from "@/data/protocols/http/http-response";
+import { UnexpectedError } from "@/domain/errors/unexpected-error";
 
 
 type SutTypes = {
@@ -59,7 +60,7 @@ describe('RemoteAuthentication', () => {
             statusCode:HttpStatusCode.serverError
         }   
         const promise = sut.auth(mockAuthentication())
-       await expect(promise).rejects.toThrow(new InvalidCredentialsError())
+       await expect(promise).rejects.toThrow(new UnexpectedError())
     
 
     });
@@ -70,7 +71,7 @@ describe('RemoteAuthentication', () => {
             statusCode:HttpStatusCode.notFound
         }   
         const promise = sut.auth(mockAuthentication())
-       await expect(promise).rejects.toThrow(new InvalidCredentialsError())
+       await expect(promise).rejects.toThrow(new UnexpectedError())
     
 
     });
