@@ -6,7 +6,7 @@ import { RemoteAuthentication } from "./remote-authentication";
 import { InvalidCredentialsError,UnexpectedError  } from "@/domain/errors";
 import { HttpStatusCode } from "@/data/protocols/http";
 import { AuthenticationParams } from "@/domain/usecases";
-import { AccountModel } from "@/models";
+import { AccountModel } from "@/domain/models";
 
 
 type SutTypes = {
